@@ -1,0 +1,14 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "quantidade": 1,
+        "nome": "arroz"
+      },
+      {
+        "quantidade": "2",
+        "nome": "feijão",
+        "id": 2
+      }
+    ]
+  }
