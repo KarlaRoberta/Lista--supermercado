@@ -8,17 +8,47 @@ import { HomeComponent } from './components/home/home.component';
 import { ReadComponent } from './components/read/read.component';
 import { DeleteComponent } from './components/delete/delete.component';
 
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import { ProductRead2Component } from './components/product-read2/product-read2.component';
+import { ProductReadComponent } from './components/product-read/product-read.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ReadComponent,
-    DeleteComponent
+    DeleteComponent,
+    ProductRead2Component,
+    ProductReadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatInputModule,
+    HttpClientModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
