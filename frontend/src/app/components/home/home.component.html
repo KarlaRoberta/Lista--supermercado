@@ -1,1 +1,18 @@
-<p>home works!</p>
+<mat-card class="home" >
+  <mat-card-title class="title">Compras do Supermercado</mat-card-title>
+  <mat-card-subtitle class="subtitle">Organize a sua lista dos itens do supermercado</mat-card-subtitle>
+</mat-card>
+
+<table class="example-full-width" cellspacing="0"><tr>
+  <td><mat-form-field class="example-full-width">
+    <mat-label >Quantidade </mat-label>
+    <input matInput placeholder="Ex.: 1" [(ngModel)]="product.quantidade" name="quantidade">
+  </mat-form-field></td>
+  <td><mat-form-field class="example-full-width">
+    <mat-label >Produto</mat-label>
+    <input matInput placeholder="Ex.: arroz" [(ngModel)]="product.nome" name="nome">
+  </mat-form-field></td>
+</tr></table>
+
+<button class="button" mat-raised-button (click)="adicionarItem()" routerLink="/products" color="primary">Adicionar item</button>
+

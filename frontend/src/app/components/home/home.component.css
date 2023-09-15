@@ -1,0 +1,59 @@
+.home .title{
+  color:blueviolet;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1em;
+}
+.home{
+  margin-left: 20px;
+  width: 97%;
+}
+.subtitle{
+  color: black;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+/* aq */
+.example-form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.example-full-width {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+td {
+  padding-right: 8px;
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
