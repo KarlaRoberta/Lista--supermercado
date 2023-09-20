@@ -1,3 +1,4 @@
+import { ProductService } from './../../product.service';
 // import { Product } from './../../component/home/product.model';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
@@ -13,9 +14,9 @@ import { Product } from '../home/product.model';
 //   nome: string
 // }
 const EXAMPLE_DATA: Product[] = [
-  {quantidade: 1, nome: 'Hydrogen'},
-  {quantidade: 2, nome: 'Helium'},
-  {quantidade: 3, nome: 'Lithium'},
+  {id: 1, nome: 'Hydrogen', quantidade: 3},
+  {id: 2, nome: 'Helium', quantidade: 2},
+  {id: 3, nome: 'Lithium', quantidade: 9},
 
 ];
 

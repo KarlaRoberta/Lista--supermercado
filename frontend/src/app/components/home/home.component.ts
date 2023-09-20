@@ -15,10 +15,11 @@ export class HomeComponent {
 
   product: Product = {
     quantidade: undefined,
-    nome: ''
+    nome: '',
+
   }
 
-  constructor(private ProductService: ProductService, private matFormFieldModule: MatFormFieldModule,
+  constructor(private productService: ProductService, private matFormFieldModule: MatFormFieldModule,
     private router: Router){}
 
     ngOnInit(): void {
@@ -26,13 +27,13 @@ export class HomeComponent {
     }
 
   adicionarItem(): void{
-    this.ProductService.create(this.product).subscribe(() =>{
-      this.ProductService.showMessage('Item adicionado')
+    this.productService.create(this.product).subscribe(() =>{
+      this.productService.showMessage('Item adicionado')
       this.router.navigate([''])
 
     })
 
   }
 
-
+  
 }
