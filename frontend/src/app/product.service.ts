@@ -29,8 +29,26 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl);
   }
 
+  readById(id: number): Observable<Product> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Product>(url)
+  }
+  remove(id: number){
+    return this.http.delete<Product>(`${this.baseUrl}/${id}`)
+  }
+
+  getAll(): Observable<Product[]>{
+    return this.http.get<Product[]>(this.baseUrl)
+  }
+
+  getItem(id: number): Observable<Product>{
+
+    return this.http.get<Product>(`${this.baseUrl}/${id}`)
+  }
+
   delete(id: number): Observable<Product>{
-    const url = `${this.baseUrl}`;
+    const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Product>(url);
   }
+
 }

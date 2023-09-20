@@ -15,18 +15,17 @@ export class ProductReadComponent implements OnInit {
   products: Product[] = []
   displayedColumns = ['quantidade', 'nome', 'acao'];
 
-  constructor(private ProductService: ProductService, private matIconModule: MatIconModule, private router: Router) {}
+
+  constructor(private productService: ProductService, private matIconModule: MatIconModule, private router: Router) {}
 
   ngOnInit(): void{
-    this.ProductService.read().subscribe(products => {
+    this.productService.read().subscribe(products => {
       this.products = products
       console.log(['/products'])
     })
   }
 
-  excluirItem(): void{
-    // this.productService.delete(this.product.id!).subscribe(() => {
-
-    // })
-  }
 }
+ 
+
+
