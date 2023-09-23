@@ -1,6 +1,14 @@
 
-<li>
-  <!-- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
-</li>
-<button class="button" mat-raised-button (click)="removeProduct(product)" routerLink="">Excluir</button>
 
+  <h1 mat-dialog-title>Excluir Item</h1>
+  <div mat-dialog-content>
+    Tem certeza que deseja excluir?
+  </div>
+  <div mat-dialog-actions >
+
+    <button mat-button mat-dialog-close (click)="cancelar()">Cancelar</button>
+    <button  mat-raised-button (click)="excluir(product)" routerLink="/products/delete/{{product.id}}" color="warn">Excluir</button>
+
+  </div>
+
+<!-- tem um product aq -->

@@ -4,8 +4,8 @@ import { ProductReadComponent } from './components/product-read/product-read.com
 import { DeleteComponent } from './components/delete/delete.component';
 
 const routes: Routes = [
-  {path: 'products', component: ProductReadComponent},
   {path: '', component: ProductReadComponent},
+  {path: 'products', component: ProductReadComponent},
   {path: 'products/delete/:id', component: DeleteComponent}
 
   ];

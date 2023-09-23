@@ -24,13 +24,16 @@ import { ProductRead2Component } from './components/product-read2/product-read2.
 import { ProductReadComponent } from './components/product-read/product-read.component';
 import {MatDialogModule} from '@angular/material/dialog';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DeleteComponent,
     ProductRead2Component,
-    ProductReadComponent
+    ProductReadComponent,
+
+
   ],
   imports: [
     BrowserModule,
