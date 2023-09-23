@@ -1,9 +1,14 @@
+import { MatDialogRef } from '@angular/material/dialog';
+// import { DeleteComponent } from './../delete/delete.component';
 import { ProductService } from './../../product.service';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
-import {Router} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import { Product } from '../home/product.model';
+import { MatDialog } from '@angular/material/dialog';
+
+import { DeleteComponent } from '../delete/delete.component';
 
 @Component({
   selector: 'app-product-read',
@@ -13,19 +18,56 @@ import { Product } from '../home/product.model';
 export class ProductReadComponent implements OnInit {
 
   products: Product[] = []
+
   displayedColumns = ['quantidade', 'nome', 'acao'];
 
+  product!: Product
 
-  constructor(private productService: ProductService, private matIconModule: MatIconModule, private router: Router) {}
+  constructor(private productService: ProductService, private matIconModule: MatIconModule, private router: Router, private route: ActivatedRoute, public dialog: MatDialog) {
+    this.getProducts()
+  }
 
   ngOnInit(): void{
+
     this.productService.read().subscribe(products => {
       this.products = products
       console.log(['/products'])
     })
   }
 
-}
- 
+  getProducts(): void{
+    const id = Number(this.route.snapshot.paramMap.get("id"))
+    this.productService.getItem(id).subscribe((product) => (this.product = product))
+  }
+  excluir( product: Product){
+    this.products = this.products.filter((a) => product.nome !== a.nome)
+    this.productService.remove(product.id!).subscribe()
+  }
 
+  removeProduct(): void {
+    const dialogRef = this.dialog.open(DeleteComponent, {
+
+     });
+
+    dialogRef.afterClosed().subscribe(product => {
+      console.log('The dialog was closed');
+      // this.products = this.products.filter((a) => product.id !== a.id)
+      this.productService.remove(product.id!).subscribe()
+      this.productService = product;
+      this.router.navigate([''])
+
+    });
+
+    //  excluir(product: Product){
+    //    this.products = this.products.filter((a) => product.nome !== a.nome)
+    //   this.productService.remove(product.id!).subscribe()
+    //   this.router.navigate([''])
+
+    //  }
+
+
+  }
+
+
+}
 
