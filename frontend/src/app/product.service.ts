@@ -5,6 +5,7 @@ import { EMPTY, Observable, catchError, map } from 'rxjs';
 import { Product } from './components/home/product.model';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DeleteComponent } from './components/delete/delete.component';
+import { NumberValueAccessor } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -38,10 +39,11 @@ export class ProductService {
   remove(id: number): Observable<Product>{
     return this.http.delete<Product>(`${this.baseUrl}/${id}`)
   }
+  
 
-  getAll(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.baseUrl)
-  }
+  // getAll(): Observable<Product[]>{
+  //   return this.http.get<Product[]>(this.baseUrl)
+  // }
 
   getItem(id: number): Observable<Product>{
     return this.http.get<Product>(`${this.baseUrl}/${id}`)

@@ -6,3 +6,8 @@
 i.delete{
   color: #e35e6b
 }
+
+i.edit{
+  color: rgba(137, 43, 226, 0.649);
+  padding-right: 10px;
+}
