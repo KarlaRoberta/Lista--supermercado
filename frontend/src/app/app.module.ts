@@ -23,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { ProductRead2Component } from './components/product-read2/product-read2.component';
 import { ProductReadComponent } from './components/product-read/product-read.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateComponent } from './components/update/update.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     DeleteComponent,
     ProductRead2Component,
     ProductReadComponent,
+    UpdateComponent,
 
 
   ],

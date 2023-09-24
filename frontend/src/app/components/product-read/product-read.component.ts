@@ -56,6 +56,7 @@ export class ProductReadComponent implements OnInit {
       this.productService = product;
       this.router.navigate([''])
 
+
     });
 
     //  excluir(product: Product){
