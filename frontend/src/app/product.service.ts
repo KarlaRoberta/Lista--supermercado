@@ -36,10 +36,15 @@ export class ProductService {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Product>(url)
   }
+  
+  update(product: Product): Observable<Product>{
+    const url = `${this.baseUrl}/${product.id}`
+    return this.http.put<Product>(url, product)
+  }
   remove(id: number): Observable<Product>{
     return this.http.delete<Product>(`${this.baseUrl}/${id}`)
   }
-  
+
 
   // getAll(): Observable<Product[]>{
   //   return this.http.get<Product[]>(this.baseUrl)
@@ -53,5 +58,4 @@ export class ProductService {
   //   const url = `${this.baseUrl}/${id}`;
   //   return this.http.delete<Product>(url);
   // }
-
 }
