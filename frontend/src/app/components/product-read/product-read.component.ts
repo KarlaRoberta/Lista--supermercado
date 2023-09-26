@@ -23,12 +23,11 @@ export class ProductReadComponent implements OnInit {
 
   product!: Product
 
-  constructor(private productService: ProductService, private matIconModule: MatIconModule, private router: Router, private route: ActivatedRoute, public dialog: MatDialog) {
-    this.getProducts()
+  constructor(private productService: ProductService,  private router: Router, private route: ActivatedRoute, public dialog: MatDialog) {
+
   }
 
   ngOnInit(): void{
-
     this.productService.read().subscribe(products => {
       this.products = products
       console.log(['/products'])
@@ -39,6 +38,7 @@ export class ProductReadComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get("id"))
     this.productService.getItem(id).subscribe((product) => (this.product = product))
   }
+
   excluir( product: Product){
     this.products = this.products.filter((a) => product.nome !== a.nome)
     this.productService.remove(product.id!).subscribe()
@@ -52,9 +52,10 @@ export class ProductReadComponent implements OnInit {
     dialogRef.afterClosed().subscribe(product => {
       console.log('The dialog was closed');
       // this.products = this.products.filter((a) => product.id !== a.id)
-      this.productService.remove(product.id!).subscribe()
-      this.productService = product;
-      this.router.navigate([''])
+      // this.productService.remove(product.id!).subscribe()
+      // this.productService = product;
+      // this.router.navigate([''])
+
 
 
     });

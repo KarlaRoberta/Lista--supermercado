@@ -12,7 +12,9 @@ export class UpdateComponent implements OnInit {
   product!: Product
 
   constructor(private productService: ProductService, private router: Router,
-    private route: ActivatedRoute){}
+    private route: ActivatedRoute){
+
+    }
 
   ngOnInit(): void{
     const id = +this.route.snapshot.paramMap.get('id')!
@@ -30,5 +32,6 @@ updateProduct(): void{
 cancel(): void{
 this.router.navigate(['/products'])
 }
+
 
 }

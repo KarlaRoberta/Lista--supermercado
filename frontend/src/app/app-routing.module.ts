@@ -7,7 +7,7 @@ import { UpdateComponent } from './components/update/update.component';
 const routes: Routes = [
   {path: '', component: ProductReadComponent},
   {path: 'products', component: ProductReadComponent},
-  {path: 'products/delete/:id', component: DeleteComponent},
+  {path: 'products/delete/:id', component: ProductReadComponent},
   {path: 'products/update/:id', component: UpdateComponent}
 
   ];
