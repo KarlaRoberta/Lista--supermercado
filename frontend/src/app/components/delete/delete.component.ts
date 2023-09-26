@@ -12,19 +12,21 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.css']
 })
-export class DeleteComponent  {
+export class DeleteComponent implements OnInit {
 
   products: Product[] = []
 
   product!: Product
 
+  ngOnInit(): void{
+
+  }
 
   constructor(private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<DeleteComponent>){
-      this.getProduct()
     }
 
     removeProduct( product: Product){
@@ -43,7 +45,7 @@ export class DeleteComponent  {
 
     }
     excluir(product: Product){
-      this.products = this.products.filter((a) => product.nome !== a.nome)
+     this.products = this.products.filter((a) => product.nome !== a.nome)
      this.productService.remove(product.id!).subscribe()
      this.router.navigate([''])
 
