@@ -1,13 +1,21 @@
 
-  <h1 mat-dialog-title>Excluir Item</h1>
-  <div mat-dialog-content>
-    Tem certeza que deseja excluir?
-  </div>
+  <mat-card>
+    <mat-card-title>Excluir produto </mat-card-title>
+    <form>
+      <div *ngIf="product">
+        <mat-form-field>
+            <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Produto" [(ngModel)]="product.nome" name="produto">
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card>
+  <button mat-raised-button (click) = "excluir(product)" color="warn" >
+    Excluir
+  </button>
 
-  <div mat-dialog-actions >
-
-    <button mat-button mat-dialog-close (click)="cancelar()">Cancelar</button>
-    <button  mat-raised-button (click)="excluir(product)" routerLink="/products/delete/{{product.id}}" color="warn">Excluir</button>
-
-  </div>
-
+  <button mat-raised-button (click) = "cancelar()" >
+    Cancelar
+  </button>

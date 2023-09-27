@@ -1,9 +1,6 @@
-import { MatDialogRef } from '@angular/material/dialog';
-// import { DeleteComponent } from './../delete/delete.component';
 import { ProductService } from './../../product.service';
 
 import { Component, OnInit,Inject } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
 import {ActivatedRoute, Router} from '@angular/router'
 import { Product } from '../home/product.model';
 import { MatDialog } from '@angular/material/dialog';
@@ -34,11 +31,6 @@ export class ProductReadComponent implements OnInit {
     })
   }
 
-  getProducts(): void{
-    const id = Number(this.route.snapshot.paramMap.get("id"))
-    this.productService.getItem(id).subscribe((product) => (this.product = product))
-  }
-
   excluir( product: Product){
     this.products = this.products.filter((a) => product.nome !== a.nome)
     this.productService.remove(product.id!).subscribe()
@@ -49,11 +41,9 @@ export class ProductReadComponent implements OnInit {
 
      });
 
+
     dialogRef.afterClosed().subscribe(product => {
       console.log('The dialog was closed');
-      // this.products = this.products.filter((a) => product.id !== a.id)
-      // this.productService.remove(product.id!).subscribe()
-      // this.productService = product;
       // this.router.navigate([''])
 
 
