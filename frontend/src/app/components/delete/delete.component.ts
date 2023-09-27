@@ -1,7 +1,7 @@
 
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import { ProductService } from './../../product.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Product } from '../home/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -18,36 +18,28 @@ export class DeleteComponent implements OnInit {
 
   product!: Product
 
-  ngOnInit(): void{
-
-  }
 
   constructor(private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
-    public dialog: MatDialog,
     public dialogRef: MatDialogRef<DeleteComponent>){
     }
 
-    removeProduct( product: Product){
-      this.products = this.products.filter((a) => product.nome !== a.nome)
-      this.productService.remove(product.id!).subscribe()
+    ngOnInit(): void{
+      const id = Number(this.route.snapshot.paramMap.get('id'))
+      // this.productService.readById(this.product.id!).subscribe(product => {this.product = product})
     }
 
-    getProduct(){
-      const id = Number(this.route.snapshot.paramMap.get("id"))
-      this.productService.getItem(id).subscribe((product) => (this.product = product))
-     }
 
+    excluir(product: Product){
+     this.products = this.products.filter((a) => product.nome !== a.nome)
+     this.productService.remove(this.product.id!).subscribe()
+     this.router.navigate([''])
+
+    }
      cancelar(): void {
       this.dialogRef.close();
       this.router.navigate(['/products'])
-
-    }
-    excluir(product: Product){
-     this.products = this.products.filter((a) => product.nome !== a.nome)
-     this.productService.remove(product.id!).subscribe()
-     this.router.navigate([''])
 
     }
 
