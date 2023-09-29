@@ -42,12 +42,12 @@ export class ProductReadComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('O diálogo foi fechado');
+      console.log('cancelado');
     });
   }
 }
 
-  
+
 
 
 

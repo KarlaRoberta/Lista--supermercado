@@ -1,4 +1,4 @@
-.home .title{
+.title{
   color:blueviolet;
   display: flex;
   justify-content: center;
@@ -10,8 +10,15 @@
   margin-left: 20px;
   width: 97%;
   text-decoration: underline;
+  color:blueviolet;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  
 }
-.home a{
+
+.title a {
   text-decoration: none;
 }
 .subtitle{

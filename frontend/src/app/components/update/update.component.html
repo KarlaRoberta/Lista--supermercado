@@ -1,26 +1,21 @@
 
-<a routerLink="/products" >
-  <i class="material-icons edit" >
-    home
-  </i>
-</a>
-  <mat-card-title>Alterar produto</mat-card-title>
+  <mat-card-title class="titulo">Alterar produto</mat-card-title>
   <form>
     <div *ngIf="product">
-      <mat-form-field>
+      <mat-form-field class="input">
           <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="input">
           <input class="nome" matInput placeholder="Produto" [(ngModel)]="product.nome" name="produto">
       </mat-form-field>
     </div>
   </form>
 
 
-<button class="botao" mat-raised-button (click) = "updateProduct()" color="primary">
+<button class="button" mat-raised-button (click) = "updateProduct()" color="primary">
   Atualizar
 </button>
 
-<button class="botao" mat-raised-button (click) = "cancel()" >
+<button class="button" mat-raised-button (click) = "cancel()" >
   Cancelar
 </button>

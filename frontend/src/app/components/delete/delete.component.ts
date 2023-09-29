@@ -31,6 +31,7 @@ export class DeleteComponent implements OnInit {
 
   excluir(): void {
     this.productService.remove(this.product.id!).subscribe(() => {
+      this.productService.showMessage('Produto excluido com sucesso!')
       this.dialogRef.close();
     });
   }
