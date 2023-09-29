@@ -4,7 +4,6 @@ import { ProductService } from './../../product.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Product } from '../home/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -12,36 +11,36 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.css']
 })
+
 export class DeleteComponent implements OnInit {
 
-  products: Product[] = []
+  product: Product
 
-  product!: Product
-
-
-  constructor(private productService: ProductService,
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private productService: ProductService,
     private router: Router,
-    private route: ActivatedRoute,
-    public dialogRef: MatDialogRef<DeleteComponent>){
-    }
+    public dialogRef: MatDialogRef<DeleteComponent>
+  ) {
+    this.product = data.product // Atribui o produto que foi passado para a variável local
+  }
 
-    ngOnInit(): void{
-      const id = Number(this.route.snapshot.paramMap.get('id'))
-      // this.productService.readById(this.product.id!).subscribe(product => {this.product = product})
-    }
+  ngOnInit(): void {
 
+  }
 
-    excluir(product: Product){
-     this.products = this.products.filter((a) => product.nome !== a.nome)
-     this.productService.remove(this.product.id!).subscribe()
-     this.router.navigate([''])
-
-    }
-     cancelar(): void {
+  excluir(): void {
+    this.productService.remove(this.product.id!).subscribe(() => {
       this.dialogRef.close();
-      this.router.navigate(['/products'])
+    });
+  }
 
-    }
+  cancelar(): void {
+    this.dialogRef.close();
+    this.router.navigate(['/products']);
+  }
+}
 
-    }
+
+
 

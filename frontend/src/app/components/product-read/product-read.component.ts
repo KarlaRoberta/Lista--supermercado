@@ -36,30 +36,22 @@ export class ProductReadComponent implements OnInit {
     this.productService.remove(product.id!).subscribe()
   }
 
-  removeProduct(): void {
+  removeProduct(product: Product): void {
     const dialogRef = this.dialog.open(DeleteComponent, {
-
-     });
-
-
-    dialogRef.afterClosed().subscribe(product => {
-      console.log('The dialog was closed');
-      // this.router.navigate([''])
-
-
-
+      data: { product } // Passa o produto para o diálogo
     });
 
-    //  excluir(product: Product){
-    //    this.products = this.products.filter((a) => product.nome !== a.nome)
-    //   this.productService.remove(product.id!).subscribe()
-    //   this.router.navigate([''])
-
-    //  }
-
-
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('O diálogo foi fechado');
+    });
   }
-
-
 }
+
+  
+
+
+
+
+
+
 

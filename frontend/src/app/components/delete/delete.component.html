@@ -4,15 +4,17 @@
     <form>
       <div *ngIf="product">
         <mat-form-field>
-            <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade">
+          <p>Quantidade</p>
+            <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Produto" [(ngModel)]="product.nome" name="produto">
+          <p>Produto</p>
+            <input matInput placeholder="Produto" [(ngModel)]="product.nome" name="produto" disabled>
         </mat-form-field>
       </div>
     </form>
   </mat-card>
-  <button mat-raised-button (click) = "excluir(product)" color="warn" >
+  <button mat-raised-button (click) = "excluir()" color="warn" routerLink="/products">
     Excluir
   </button>
 

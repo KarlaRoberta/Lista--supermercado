@@ -9,6 +9,10 @@
 .home{
   margin-left: 20px;
   width: 97%;
+  text-decoration: underline;
+}
+.home a{
+  text-decoration: none;
 }
 .subtitle{
   color: black;
