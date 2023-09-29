@@ -1,0 +1,19 @@
+button{
+  margin: 30px 15px 0px 0px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
+.titulo{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+}
+.caixa{
+  overflow-y: hidden;
+  border-radius: 3px;
+}

@@ -1,9 +1,9 @@
 
-  <mat-card>
-    <mat-card-title>Excluir produto </mat-card-title>
-    <form>
-      <div *ngIf="product">
-        <mat-form-field>
+<div class="caixa">
+<mat-card-title class="titulo">Excluir produto </mat-card-title>
+<form>
+  <div *ngIf="product">
+    <mat-form-field>
           <p>Quantidade</p>
             <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade" disabled>
         </mat-form-field>
@@ -13,7 +13,7 @@
         </mat-form-field>
       </div>
     </form>
-  </mat-card>
+
   <button mat-raised-button (click) = "excluir()" color="warn" routerLink="/products">
     Excluir
   </button>
@@ -21,3 +21,4 @@
   <button mat-raised-button (click) = "cancelar()" >
     Cancelar
   </button>
+</div>
