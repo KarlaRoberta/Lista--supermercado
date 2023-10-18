@@ -1,0 +1,9 @@
+.footer{
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #282b3213;
+
+}
+
+

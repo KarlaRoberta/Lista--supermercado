@@ -1,15 +1,41 @@
 
-  <mat-card-title class="titulo">Alterar produto</mat-card-title>
+<!-- <div class="geralAlterar">
+  <mat-card-title class="titulo">Excluir produto </mat-card-title>
   <form>
     <div *ngIf="product">
-      <mat-form-field class="input">
-          <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade">
-      </mat-form-field>
-      <mat-form-field class="input">
-          <input class="nome" matInput placeholder="Produto" [(ngModel)]="product.nome" name="produto">
-      </mat-form-field>
-    </div>
-  </form>
+      <mat-form-field>
+            <p>Quantidade</p>
+              <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade" disabled>
+          </mat-form-field>
+          <mat-form-field>
+            <p>Produto</p>
+              <input matInput placeholder="Produto" [(ngModel)]="product.nome" name="produto" disabled>
+          </mat-form-field>
+        </div>
+      </form>
+
+    <button class="buttonExcluir" mat-raised-button (click) = "updateProduct()" color="warn" routerLink="/products">
+      Excluir
+    </button>
+
+    <button mat-raised-button (click) = "cancel()" >
+      Cancelar
+    </button> -->
+    <!-- <div class="geralAlterar"> -->
+  <mat-card-title class="titulo">Alterar produto</mat-card-title>
+  <form>
+    <form>
+      <div *ngIf="product">
+        <mat-form-field>
+              <p>Quantidade</p>
+                <input matInput placeholder="Quantidade" [(ngModel)]="product.quantidade" name="quantidade">
+            </mat-form-field>
+            <mat-form-field>
+              <p>Produto</p>
+                <input matInput placeholder="Produto" [(ngModel)]="product.nome" name="produto" >
+            </mat-form-field>
+          </div>
+        </form>
 
 
 <button class="button" mat-raised-button (click) = "updateProduct()" color="primary">
@@ -19,3 +45,6 @@
 <button class="button" mat-raised-button (click) = "cancel()" >
   Cancelar
 </button>
+
+
+

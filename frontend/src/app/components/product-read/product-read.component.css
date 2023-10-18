@@ -1,13 +1,29 @@
-.full-width-table {
-  width: 100%;
-  margin-top: 1rem;
+
+.tabelaGeral{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background-color: #282b3213;
+
 }
 
 i.delete{
-  color: #e35e6b
+  color: #e35e6b;
+  padding-left: 20px;
+  padding-right: 40px;
 }
 
 i.edit{
   color: rgba(137, 43, 226, 0.649);
   padding-right: 10px;
+  padding-left: 20px;
 }
+.full-width-table .acao{
+  padding-left: 40px;
+
+}
+.mat-elevation-z4{
+  margin-bottom: 26px;
+}
+
