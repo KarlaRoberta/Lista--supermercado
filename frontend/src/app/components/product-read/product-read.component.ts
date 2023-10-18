@@ -6,6 +6,7 @@ import { Product } from '../home/product.model';
 import { MatDialog } from '@angular/material/dialog';
 
 import { DeleteComponent } from '../delete/delete.component';
+import { UpdateComponent } from '../update/update.component';
 
 @Component({
   selector: 'app-product-read',
@@ -38,6 +39,16 @@ export class ProductReadComponent implements OnInit {
 
   removeProduct(product: Product): void {
     const dialogRef = this.dialog.open(DeleteComponent, {
+      data: { product } // Passa o produto para o diálogo
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('cancelado');
+    });
+  }
+
+  updateProduct(product: Product): void {
+    const dialogRef = this.dialog.open(UpdateComponent, {
       data: { product } // Passa o produto para o diálogo
     });
 

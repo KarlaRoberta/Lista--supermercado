@@ -1,7 +1,9 @@
 import { ProductService } from './../../product.service';
-import { Component, OnInit } from '@angular/core';
+
 import { Product } from '../home/product.model';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-update',
@@ -11,9 +13,13 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class UpdateComponent implements OnInit {
   product!: Product
 
-  constructor(private productService: ProductService, private router: Router,
-    private route: ActivatedRoute){
-
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private productService: ProductService,
+    private router: Router,
+    private route: ActivatedRoute,
+    public dialogRef: MatDialogRef<UpdateComponent>){
+      this.product = data.product // Atribui o produto que foi passado para a variável local
     }
 
   ngOnInit(): void{
@@ -27,11 +33,12 @@ updateProduct(): void{
   this.productService.update(this.product).subscribe(() => {
     this.productService.showMessage('Produto atualizado com sucesso!')
     this.router.navigate(['/products'])
+    this.dialogRef.close();
   })
 }
 cancel(): void{
-this.router.navigate(['/products'])
+  this.dialogRef.close();
+  this.router.navigate(['/products']);
 }
-
 
 }

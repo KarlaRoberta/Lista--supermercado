@@ -1,7 +1,8 @@
 button{
-  margin: 30px 15px 0px 0px;
+  margin: 30px 25px 0px 0px;
   margin-top: -10px;
   margin-bottom: 5px;
+
 }
 
 .titulo{
@@ -16,4 +17,8 @@ button{
 .caixa{
   overflow-y: hidden;
   border-radius: 3px;
+
+}
+.buttonExcluir{
+  margin-left: 100px;
 }

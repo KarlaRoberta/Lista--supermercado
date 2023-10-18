@@ -24,6 +24,8 @@ import { ProductRead2Component } from './components/product-read2/product-read2.
 import { ProductReadComponent } from './components/product-read/product-read.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateComponent } from './components/update/update.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { UpdateComponent } from './components/update/update.component';
     ProductRead2Component,
     ProductReadComponent,
     UpdateComponent,
+    FooterComponent,
+
 
 
   ],
@@ -53,7 +57,8 @@ import { UpdateComponent } from './components/update/update.component';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
