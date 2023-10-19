@@ -1,48 +1,38 @@
-import { ProductService } from './../../product.service';
-// import { Product } from './../../component/home/product.model';
+// import { Product } from './../home/product.model';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { Product } from '../home/product.model';
-// import { Product } from '../../component/home/product.model';
-// import { Product } from '../../component/home/product.model';
+import {SelectionModel} from '@angular/cdk/collections';
+import { ProductService } from 'src/app/product.service';
 
-// export interface Product{
-//   quantidade: number,
-//   nome: string
-// }
-const EXAMPLE_DATA: Product[] = [
+
+
+export const EXAMPLE_DATA: Product[] = [
   {id: 1, nome: 'Hydrogen', quantidade: 3},
   {id: 2, nome: 'Helium', quantidade: 2},
   {id: 3, nome: 'Lithium', quantidade: 9},
 
 ];
 
-/**
- * Data source for the ProductRead2 view. This class should
- * encapsulate all logic for fetching and manipulating the displayed data
- * (including sorting, pagination, and filtering).
- */
 export class ProductRead2DataSource extends DataSource<Product> {
   data: Product[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
+  // dataSource = new MatTableDataSource<Product>(EXAMPLE_DATA);
+  // selection = new SelectionModel<Product>(true, []);
 
   constructor() {
     super();
+
   }
 
-  /**
-   * Connect this data source to the table. The table will only update when
-   * the returned stream emits new items.
-   * @returns A stream of the items to be rendered.
-   */
+
   connect(): Observable<Product[]> {
     if (this.paginator && this.sort) {
-      // Combine everything that affects the rendered data into one update
-      // stream for the data-table to consume.
       return merge(observableOf(this.data), this.paginator.page, this.sort.sortChange)
         .pipe(map(() => {
           return this.getPagedData(this.getSortedData([...this.data ]));
