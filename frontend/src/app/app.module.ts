@@ -26,7 +26,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateComponent } from './components/update/update.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,9 @@ import { MatToolbarModule} from '@angular/material/toolbar';
     MatSortModule,
     MatIconModule,
     MatDialogModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCheckboxModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
