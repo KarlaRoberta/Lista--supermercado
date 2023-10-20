@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar'
 import { EMPTY, Observable, catchError, map } from 'rxjs';
 import { Product } from './components/home/product.model';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { DeleteComponent } from './components/delete/delete.component';
-import { NumberValueAccessor } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'

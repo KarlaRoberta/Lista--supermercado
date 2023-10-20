@@ -26,4 +26,16 @@ i.edit{
 .mat-elevation-z4{
   margin-bottom: 26px;
 }
+@media screen and (max-width:767px){
+  i.delete{
+    padding-left: 30px;
+    margin-bottom: 10px;
 
+  }
+  i.edit{
+    padding-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+}
