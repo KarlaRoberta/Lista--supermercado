@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
-
 import { DeleteComponent } from './components/delete/delete.component';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -20,7 +19,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
-import { ProductRead2Component } from './components/product-read2/product-read2.component';
 import { ProductReadComponent } from './components/product-read/product-read.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateComponent } from './components/update/update.component';
@@ -33,7 +31,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AppComponent,
     HomeComponent,
     DeleteComponent,
-    ProductRead2Component,
     ProductReadComponent,
     UpdateComponent,
     FooterComponent,
@@ -60,7 +57,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatDialogModule,
     MatToolbarModule,
     MatCheckboxModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

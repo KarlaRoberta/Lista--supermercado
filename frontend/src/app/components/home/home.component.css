@@ -74,3 +74,9 @@ td {
 .menu{
   background-color: #282b3213;
 }
+@media screen and (max-width:767px){
+  .example-full-width{
+    width: 70%;
+  }
+}
+

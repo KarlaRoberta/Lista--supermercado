@@ -1,14 +1,9 @@
-// import { Product } from './../home/product.model';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { Product } from '../home/product.model';
-import {SelectionModel} from '@angular/cdk/collections';
-import { ProductService } from 'src/app/product.service';
-
 
 
 export const EXAMPLE_DATA: Product[] = [
@@ -22,8 +17,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
   data: Product[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
-  // dataSource = new MatTableDataSource<Product>(EXAMPLE_DATA);
-  // selection = new SelectionModel<Product>(true, []);
+
 
   constructor() {
     super();
@@ -42,16 +36,10 @@ export class ProductRead2DataSource extends DataSource<Product> {
     }
   }
 
-  /**
-   *  Called when the table is being destroyed. Use this function, to clean up
-   * any open connections or free any held resources that were set up during connect.
-   */
+
   disconnect(): void {}
 
-  /**
-   * Paginate the data (client-side). If you're using server-side pagination,
-   * this would be replaced by requesting the appropriate data from the server.
-   */
+
   private getPagedData(data: Product[]): Product[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
@@ -61,10 +49,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
     }
   }
 
-  /**
-   * Sort the data (client-side). If you're using server-side sorting,
-   * this would be replaced by requesting the appropriate data from the server.
-   */
+
   private getSortedData(data: Product[]): Product[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
@@ -81,7 +66,6 @@ export class ProductRead2DataSource extends DataSource<Product> {
   }
 }
 
-/** Simple sort comparator for example ID/Name columns (for client-side sorting). */
 function compare(a: string | number, b: string | number, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

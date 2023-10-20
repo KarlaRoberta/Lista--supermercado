@@ -7,8 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {SelectionModel} from '@angular/cdk/collections';
 import { DeleteComponent } from '../delete/delete.component';
 import { UpdateComponent } from '../update/update.component';
-import { EXAMPLE_DATA } from '../home/product.model';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @Component({
   selector: 'app-product-read',
   templateUrl: './product-read.component.html',
@@ -21,13 +20,12 @@ export class ProductReadComponent implements OnInit {
   products: Product[] = []
 
   displayedColumns = ['select','quantidade', 'nome', 'acao'];
-  dataSource = new MatTableDataSource<Product>(EXAMPLE_DATA);
+  dataSource = new MatTableDataSource<Product>(this.products);
   selection = new SelectionModel<Product>(true, []);
 
   product!: Product
 
-  constructor(private productService: ProductService,  private router: Router, private route: ActivatedRoute, public dialog: MatDialog, public MatCheckboxModule: MatCheckboxModule, public MatTableModule: MatTableModule) {
-
+  constructor(private productService: ProductService,  private router: Router, private route: ActivatedRoute, public dialog: MatDialog) {
   }
 
   ngOnInit(): void{
@@ -39,7 +37,7 @@ export class ProductReadComponent implements OnInit {
 
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
+    const numRows = this.products.length;
     return numSelected === numRows;
   }
 
@@ -48,8 +46,7 @@ export class ProductReadComponent implements OnInit {
       this.selection.clear();
       return;
     }
-
-    this.selection.select(...this.dataSource.data);
+    this.selection.select(...this.products);
   }
 
   checkboxLabel(row?: Product): string {
@@ -58,7 +55,6 @@ export class ProductReadComponent implements OnInit {
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.nome + 1}`;
   }
-
 
   excluir( product: Product){
     this.products = this.products.filter((a) => product.nome !== a.nome)
