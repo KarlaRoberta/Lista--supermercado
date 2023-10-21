@@ -3,16 +3,19 @@
 Uma Lista de Supermercado totalmente funcional! 💡📋
 
 Ao longo do meu processo de aprendizado com Angular, decidi consolidar meus conhecimentos criando essa aplicação. A Lista de Supermercado permite que os usuários adicionem, 
-editem e excluam itens de forma intuitiva e eficaz.
+editem e excluam itens de forma intuitiva e eficaz. Além disso, contém um checkbox, onde o usuário pode ir marcando os itens que já foram adionados no carrinho do supermercado, tendo um melhor controle dos itens que ainda faltam ser adionados.
 
 Menu principal:
 
-![image](https://github.com/KarlaRoberta/Lista--supermercado/assets/96659292/61f72f24-1e0f-4d82-bb4d-b4d20347ce17)
+![image](https://github.com/KarlaRoberta/Lista--supermercado/assets/96659292/1841dde7-3505-49f2-a009-3bfabba39951)
+
 
 Página para editar o item:
 
-![image](https://github.com/KarlaRoberta/Lista--supermercado/assets/96659292/055c4470-0466-44f2-85aa-8a3b759d9a7d)
+![image](https://github.com/KarlaRoberta/Lista--supermercado/assets/96659292/f31713f2-8ddf-40fd-83c2-4cd84c109005)
+
 
 Função excluir:
 
-![image](https://github.com/KarlaRoberta/Lista--supermercado/assets/96659292/e10d46aa-2436-495f-9afe-32ace9e4c4af)
+![image](https://github.com/KarlaRoberta/Lista--supermercado/assets/96659292/15e84ca1-7a5a-4730-94b7-ea47bb42e119)
+
